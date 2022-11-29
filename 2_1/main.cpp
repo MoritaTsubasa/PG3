@@ -21,7 +21,7 @@ int main() {
 	printf("-----2019-----\n");
 	for (auto itr = yamanoteLine.begin(); itr != yamanoteLine.end(); itr++)
 	{
-		if (*itr == "Nippori")
+		if (strcmp(*itr, "Nippori") == 0)
 		{
 			itr = yamanoteLine.insert(itr, "Nishinippori");
 			printf("%s\n", *itr);
@@ -33,7 +33,7 @@ int main() {
 	printf("-----2022-----\n");
 	for (auto itr = yamanoteLine.begin(); itr != yamanoteLine.end(); itr++)
 	{
-		if (*itr == "Shinagawa")
+		if (strcmp(*itr, "Shinagawa") == 0)
 		{
 			itr = yamanoteLine.insert(itr, "Takanawagateway");
 			printf("%s\n", *itr);
