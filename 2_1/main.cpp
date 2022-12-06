@@ -1,46 +1,45 @@
-#include <stdio.h>
-#include <list>
+#include<list>
+#include <iostream>
 
 using namespace std;
 
-int main() {
+int main()
+{
+	list<const char*>stations = { "Tokyo","Kanda","Akihabara","Okachimachi","Ueno",
+		"Uguisudani","Nippori","Tabata","Komagome","Sugamo","Otsuka","Ikebukuro",
+		"Mejiro","Takadanobaba","Shinokubo","Shinjuku","Yoyogi","Harajuku",
+		"Shibuya","Ebisu","Meguro","Gotanda","Osaki","Shinagawa","Tamachi",
+		"Hamamatsucho","Shimbashi","Yurakucho" };
 
-	list<const char*> yamanoteLine =
-
-	{ "Ueno","Okachimachi","Akibahara","Kanda","Tokyo","Yurakucho","Shimbashi",
-	"Hamamatsucho","Tamachi","Shinagawa","Osaki","Gotanda","Meguro",
-	"Ebisu" ,"Shibuya","Harajuku","Yoyogi","Shinjuku","ShinOkubo","Takadanobaba"
-	,"Mejiro","Ikebukuro","Otuka","Sugamo","Komagome","Tabata","Nippori","Uguisudani" };
-
-	printf("-----1970-----\n");
-	for (auto itr = yamanoteLine.begin(); itr != yamanoteLine.end(); itr++)
-	{
-		printf("%s\n", *itr);
+	cout << "---1970---" << endl;
+	for (const char* station : stations) {
+		cout << station << endl;
 	}
 
-	printf("-----2019-----\n");
-	for (auto itr = yamanoteLine.begin(); itr != yamanoteLine.end(); itr++)
-	{
-		if (strcmp(*itr, "Nippori") == 0)
-		{
-			itr = yamanoteLine.insert(itr, "Nishinippori");
-			printf("%s\n", *itr);
-			itr++;
+	for (list<const char*>::iterator itr = stations.begin(); itr != stations.end(); ++itr) {
+		if (*itr == "Tabata") {
+			itr = stations.insert(itr, "Nishinippori");
+			++itr;
 		}
-		printf("%s\n", *itr);
 	}
 
-	printf("-----2022-----\n");
-	for (auto itr = yamanoteLine.begin(); itr != yamanoteLine.end(); itr++)
-	{
-		if (strcmp(*itr, "Shinagawa") == 0)
-		{
-			itr = yamanoteLine.insert(itr, "Takanawagateway");
-			printf("%s\n", *itr);
-			itr++;
-		}
-		printf("%s\n", *itr);
+	cout << "---2019---" << endl;
+	for (const char* station : stations) {
+		cout << station << endl;
 	}
+
+	for (list<const char*>::iterator itr = stations.begin(); itr != stations.end(); ++itr) {
+		if (*itr == "Tamachi") {
+			itr = stations.insert(itr, "Takanawagateway");
+			++itr;
+		}
+	}
+
+	cout << "---2022---" << endl;
+	for (const char* station : stations) {
+		cout << station << endl;
+	}
+
 
 	return 0;
 }
