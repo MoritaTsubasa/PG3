@@ -17,7 +17,7 @@ int main()
 	}
 
 	for (list<const char*>::iterator itr = stations.begin(); itr != stations.end(); ++itr) {
-		if (*itr == "Tabata") {
+		if (strcmp(*itr, "Nippori") == 0) {
 			itr = stations.insert(itr, "Nishinippori");
 			++itr;
 		}
@@ -29,7 +29,7 @@ int main()
 	}
 
 	for (list<const char*>::iterator itr = stations.begin(); itr != stations.end(); ++itr) {
-		if (*itr == "Tamachi") {
+		if (strcmp(*itr, "Tamachi") == 0) {
 			itr = stations.insert(itr, "Takanawagateway");
 			++itr;
 		}
