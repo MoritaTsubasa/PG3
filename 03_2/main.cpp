@@ -19,7 +19,7 @@ int main()
 
         cout << " EnemyCount = " << Enemy::EnemyCount << endl;
        
-        Sleep(2 * 1000);
+        Sleep(3 * 1000);
         enemy1->Destroy();
 
    
