@@ -10,7 +10,7 @@ public:
 	Enemy() { EnemyCount++; }
 	~Enemy() { EnemyCount--; }
 
-	void Destroy();
+	void Death();
 
 private:
 
