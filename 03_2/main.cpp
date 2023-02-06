@@ -19,13 +19,13 @@ int main()
     while (Enemy::EnemyCount > 0)
     {
 
-        cout << " EnemyCount = " << Enemy::EnemyCount << endl;
+        cout << " EnemyAlive = " << Enemy::EnemyCount << endl;
 
         Sleep(3 * 1000);
         enemy1->Death();
 
 
-        cout << " EnemyCount = " << Enemy::EnemyCount << endl;
+        cout << " EnemyAlive = " << Enemy::EnemyCount << endl;
     }
 
     delete enemy1;
